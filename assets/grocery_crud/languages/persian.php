@@ -74,15 +74,3 @@
 	$lang['list_export'] 				= "خروجی اکسل";
 	$lang['list_print'] 				= "نسخه چاپی";
 	$lang['minimize_maximize'] 			= 'نمایش/عدم نمایش';
-
-	/* Added in version 1.4 */
-	$lang['list_view'] = 'View';
-
-	/* Added in version 1.5.1 */
-	$lang['ui_day'] = 'dd';
-	$lang['ui_month'] = 'mm';
-	$lang['ui_year'] = 'yyyy';
-
-	/* Added in version 1.5.2 */
-	$lang['list_more'] = 'More';
-
