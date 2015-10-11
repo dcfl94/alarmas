@@ -57,7 +57,7 @@ class CI_Migration {
 		}
 
 		// If not set, set it
-		$this->_migration_path == '' AND $this->_migration_path = APPPATH . 'migrations/';
+		$this->_migration_path == '' OR $this->_migration_path = APPPATH . 'migrations/';
 
 		// Add trailing slash if not set
 		$this->_migration_path = rtrim($this->_migration_path, '/').'/';
@@ -89,7 +89,8 @@ class CI_Migration {
 	 * Calls each migration step required to get to the schema version of
 	 * choice
 	 *
-	 * @param	int	Target schema version
+	 * @access	public
+	 * @param $version integer	Target schema version
 	 * @return	mixed	TRUE if already latest, FALSE if failed, int if upgraded
 	 */
 	public function version($target_version)
@@ -104,13 +105,14 @@ class CI_Migration {
 			++$stop;
 			$step = 1;
 		}
+
 		else
 		{
 			// Moving Down
 			$step = -1;
 		}
-
-		$method = ($step === 1) ? 'up' : 'down';
+		
+		$method = $step === 1 ? 'up' : 'down';
 		$migrations = array();
 
 		// We now prepare to actually DO the migrations
@@ -214,6 +216,7 @@ class CI_Migration {
 	/**
 	 * Set's the schema to the latest migration
 	 *
+	 * @access	public
 	 * @return	mixed	true if already latest, false if failed, int if upgraded
 	 */
 	public function latest()
@@ -225,7 +228,7 @@ class CI_Migration {
 		}
 
 		$last_migration = basename(end($migrations));
-
+		
 		// Calculate the last migration step from existing migration
 		// filenames and procceed to the standard version migration
 		return $this->version((int) substr($last_migration, 0, 3));
@@ -236,6 +239,7 @@ class CI_Migration {
 	/**
 	 * Set's the schema to the migration version set in config
 	 *
+	 * @access	public
 	 * @return	mixed	true if already current, false if failed, int if upgraded
 	 */
 	public function current()
@@ -248,6 +252,7 @@ class CI_Migration {
 	/**
 	 * Error string
 	 *
+	 * @access	public
 	 * @return	string	Error message returned as a string
 	 */
 	public function error_string()
@@ -260,6 +265,7 @@ class CI_Migration {
 	/**
 	 * Set's the schema to the latest migration
 	 *
+	 * @access	protected
 	 * @return	mixed	true if already latest, false if failed, int if upgraded
 	 */
 	protected function find_migrations()
@@ -267,7 +273,7 @@ class CI_Migration {
 		// Load all *_*.php files in the migrations path
 		$files = glob($this->_migration_path . '*_*.php');
 		$file_count = count($files);
-
+		
 		for ($i = 0; $i < $file_count; $i++)
 		{
 			// Mark wrongly formatted files as false for later filtering
@@ -277,8 +283,9 @@ class CI_Migration {
 				$files[$i] = FALSE;
 			}
 		}
-
+		
 		sort($files);
+
 		return $files;
 	}
 
@@ -287,7 +294,8 @@ class CI_Migration {
 	/**
 	 * Retrieves current schema version
 	 *
-	 * @return	int	Current Migration
+	 * @access	protected
+	 * @return	integer	Current Migration
 	 */
 	protected function _get_version()
 	{
@@ -300,8 +308,9 @@ class CI_Migration {
 	/**
 	 * Stores the current schema version
 	 *
-	 * @param	int	Migration reached
-	 * @return	bool
+	 * @access	protected
+	 * @param $migrations integer	Migration reached
+	 * @return	void					Outputs a report of the migration
 	 */
 	protected function _update_version($migrations)
 	{
@@ -315,7 +324,8 @@ class CI_Migration {
 	/**
 	 * Enable the use of CI super-global
 	 *
-	 * @param	mixed	$var
+	 * @access	public
+	 * @param $var
 	 * @return	mixed
 	 */
 	public function __get($var)

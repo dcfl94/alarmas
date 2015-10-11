@@ -38,7 +38,7 @@
 |
 */
 
-$route['default_controller'] = "catalogo/promociones";
+$route['default_controller'] = "inicio";
 $route['404_override'] = '';
 
 

@@ -175,10 +175,6 @@ table th
 .flexigrid div.sDiv2 input,.flexigrid div.sDiv2 select {
 	vertical-align:middle;
 }
-.flexigrid.crud-form select
-{
-	min-width: 200px;
-}
 .flexigrid div.btnseparator {
 	float:left;
 	height:22px;
@@ -1396,13 +1392,3 @@ input[type="submit"].btn.btn-mini {
 }
 
 /* End of twitter bootstrap buttons */
-
-.pretty-radio-buttons
-{
-	margin-top: 6px;
-}
-
-.pretty-radio-buttons label
-{
-	margin-right: 10px;
-}

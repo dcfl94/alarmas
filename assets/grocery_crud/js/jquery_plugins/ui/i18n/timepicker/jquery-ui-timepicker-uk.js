@@ -11,11 +11,8 @@
 		timezoneText: 'Часовий пояс',
 		currentText: 'Зараз',
 		closeText: 'Закрити',
-		timeFormat: 'hh:mm tt',
 		amNames: ['AM', 'A'],
-		pmNames: ['PM', 'P'],
-		ampm: false,
-		isRTL: false
+		pmNames: ['PM', 'P']
 	};
 	$.timepicker.setDefaults($.timepicker.regional['uk']);
 })(jQuery);

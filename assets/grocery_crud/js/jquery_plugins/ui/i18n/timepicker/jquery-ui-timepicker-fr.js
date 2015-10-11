@@ -11,11 +11,10 @@
 		timezoneText: 'Fuseau horaire',
 		currentText: 'Maintenant',
 		closeText: 'Terminé',
-		timeFormat: 'hh:mm',
+		timeFormat: 'hh:mm:ss',
 		amNames: ['AM', 'A'],
 		pmNames: ['PM', 'P'],
-		ampm: false,
-		isRTL: false
+		ampm: false
 	};
 	$.timepicker.setDefaults($.timepicker.regional['fr']);
 })(jQuery);

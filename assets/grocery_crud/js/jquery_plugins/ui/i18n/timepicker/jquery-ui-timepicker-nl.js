@@ -14,8 +14,7 @@
 		timeFormat: 'hh:mm tt',
 		amNames: ['AM', 'A'],
 		pmNames: ['PM', 'P'],
-		ampm: false,
-		isRTL: false
+		ampm: false
 	};
 	$.timepicker.setDefaults($.timepicker.regional['nl']);
 })(jQuery);

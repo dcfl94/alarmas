@@ -187,7 +187,7 @@ if ( ! function_exists('load_class'))
 */
 if ( ! function_exists('is_loaded'))
 {
-	function &is_loaded($class = '')
+	function is_loaded($class = '')
 	{
 		static $_is_loaded = array();
 
@@ -254,7 +254,8 @@ if ( ! function_exists('get_config'))
 			}
 		}
 
-		return $_config[0] =& $config;
+		$_config[0] =& $config;
+		return $_config[0];
 	}
 }
 

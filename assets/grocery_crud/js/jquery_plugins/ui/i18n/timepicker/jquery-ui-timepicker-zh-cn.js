@@ -11,11 +11,10 @@
 		timezoneText: '时区',
 		currentText: '现在时间',
 		closeText: '关闭',
-		timeFormat: 'hh:mm',
+		timeFormat: 'hh:mm:ss',
 		amNames: ['AM', 'A'],
 		pmNames: ['PM', 'P'],
-		ampm: false,
-		isRTL: false
+		ampm: false
 	};
 	$.timepicker.setDefaults($.timepicker.regional['zh-CN']);
 })(jQuery);

@@ -11,11 +11,10 @@
 		timezoneText: 'Ζώνη ώρας',
 		currentText: 'Τώρα',
 		closeText: 'Κλείσιμο',
-		timeFormat: 'hh:mm',
+		timeFormat: 'hh:mm:ss',
 		amNames: ['π.μ.', 'AM', 'A'],
 		pmNames: ['μ.μ.', 'PM', 'P'],
-		ampm: false,
-		isRTL: false
+		ampm: false
 	};
 	$.timepicker.setDefaults($.timepicker.regional['el']);
 })(jQuery);

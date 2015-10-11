@@ -14,8 +14,7 @@
 		timeFormat: 'hh:mm tt',
 		amNames: ['vorm.', 'AM', 'A'],
 		pmNames: ['nachm.', 'PM', 'P'],
-		ampm: false,
-		isRTL: false
+		ampm: false
 	};
 	$.timepicker.setDefaults($.timepicker.regional['de']);
 })(jQuery);

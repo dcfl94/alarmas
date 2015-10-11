@@ -14,8 +14,7 @@
 		timeFormat: 'h:m',
 		amNames: ['SA', 'AM', 'A'],
 		pmNames: ['CH', 'PM', 'P'],
-		ampm: false,
-		isRTL: false
+		ampm: false
 	};
 	$.timepicker.setDefaults($.timepicker.regional['vi']);
 })(jQuery);

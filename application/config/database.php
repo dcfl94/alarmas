@@ -50,8 +50,8 @@ $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
 $db['default']['username'] = 'root';
-$db['default']['password'] = ''; /*tu password*/
-$db['default']['database'] = 'alarmas_db';
+$db['default']['password'] = '';
+$db['default']['database'] = 'alarmas';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;

@@ -11,11 +11,10 @@
 		timezoneText: 'Huso horario',
 		currentText: 'Ahora',
 		closeText: 'Cerrar',
-		timeFormat: 'hh:mm',
+		timeFormat: 'hh:mm:ss',
 		amNames: ['a.m.', 'AM', 'A'],
 		pmNames: ['p.m.', 'PM', 'P'],
-		ampm: false,
-		isRTL: false
+		ampm: false
 	};
 	$.timepicker.setDefaults($.timepicker.regional['es']);
 })(jQuery);

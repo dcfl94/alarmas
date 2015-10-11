@@ -11,11 +11,8 @@
 		timezoneText: 'Часовой пояс',
 		currentText: 'Сейчас',
 		closeText: 'Закрыть',
-		timeFormat: 'hh:mm tt',
 		amNames: ['AM', 'A'],
-		pmNames: ['PM', 'P'],
-		ampm: false,
-		isRTL: false
+		pmNames: ['PM', 'P']
 	};
 	$.timepicker.setDefaults($.timepicker.regional['ru']);
 })(jQuery);
