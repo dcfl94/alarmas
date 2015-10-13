@@ -62,10 +62,9 @@
 			    <span class="caret"></span>
 			  </button>
 			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-			    
-			    <li>	    		<a href="index.php/derechopeticion/administracion">Derechos de peticion</a>
-			    </li>
 			    <li><a href="index.php/tutelas/administracion">Tutelas</a>
+			    </li>
+			    <li>	    		<a href="index.php/derechopeticion/administracion">Derechos de peticion</a>
 			    </li>
 			    <li>	    		<a href="index.php/Reportes/administracion">Reportes</a>
 			    </li>
