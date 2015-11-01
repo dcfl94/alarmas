@@ -66,7 +66,7 @@
 			    </li>
 			    <li>	    		<a href="index.php/derechopeticion/administracion">Derechos de peticion</a>
 			    </li>
-			    <li>	    		<a href="index.php/Reportes/administracion">Reportes</a>
+			    <li>	    		<a href="index.php/reportes">Reportes</a>
 			    </li>
 			  </ul>
 			</div>

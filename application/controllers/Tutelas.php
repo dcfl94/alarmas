@@ -32,6 +32,8 @@ class Tutelas extends CI_Controller {
  	 **/
 	function administracion()
 	{
+		
+		
 		try{
 
 			/* Creamos el objeto */
@@ -44,7 +46,7 @@ class Tutelas extends CI_Controller {
 			$crud->set_table('tutela');
 
 			/* Le asignamos un nombre */
-			$crud->set_subject('derecho Peticion');
+			$crud->set_subject('tutelas');
 
 			/* Asignamos el idioma español */
 			$crud->set_language('spanish');
@@ -52,45 +54,56 @@ class Tutelas extends CI_Controller {
 			/* Aqui le decimos a grocery que estos campos son obligatorios */
 			$crud->required_fields(
 				 
-				'RadicadoInterno',
-				'RadicadoUQ',
+				'Radicado Interno',
+				'Radicado UQ',
 				'Asunto', 
 				'Solicitante', 
-				'FechaRecibido',
-				'FechaVencimiento',
-				'DiasRespuesta',
-				'Usuario_idUsuario',
-				'Responsable_idResponsable',
-				'Estado_idEstado'
-
+				'Responsable', 
+				'Correo Responsable', 
+				'Fecha Recibido',
+				'Fecha Vencimiento',
+				'Usuario_Cedula'
 
 			);
 
-			/* Aqui le indicamos que campos deseamos mostrar */
+			/* Aqui le indicamos que campos deseamos mostrar 
+
+				
+
+
+			*/
 			$crud->columns(
-				'RadicadoInterno',
-				'RadicadoUQ',
+				'Radicado Interno',
+				'Radicado UQ',
 				'Asunto', 
 				'Solicitante', 
-				'FechaRecibido',
-				'FechaVencimiento',
-				'DiasRespuesta',
-				'Usuario_idUsuario',
-				'Responsable_idResponsable',
-				'Estado_idEstado'
+				'Responsable', 
+				'Correo Responsable', 
+				'Fecha Recibido',
+				'Fecha Vencimiento',
+				'Usuario_Cedula'
 
+			
 			);
 			
-			/* Generamos la tabla */
+			/* Generamos la tabla 
+				
+			*/
 			$output = $crud->render();
-			
+		
 			/* La cargamos en la vista situada en 
 			/applications/views/productos/administracion.php */
 			$this->load->view('tutelas/administracion', $output);
+			
+	        
+			
 			
 		}catch(Exception $e){
 			/* Si algo sale mal cachamos el error y lo mostramos */
 			show_error($e->getMessage().' --- '.$e->getTraceAsString());
 		}
+			
 	}
+	
+	
 }
