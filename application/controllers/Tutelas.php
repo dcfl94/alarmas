@@ -1,8 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /* Heredamos de la clase CI_Controller */
-class Tutelas extends CI_Controller
-{
+class Tutelas extends CI_Controller {
 
 	function __construct() 
 	{
@@ -17,27 +16,7 @@ class Tutelas extends CI_Controller
 
 		/* Añadimos el helper al controlador */
 		$this->load->helper('url');
-		$this->load->helper('date');
-	
-
-		/* Obtenemos la fecha actual */
-		$timestamp =now();
-		$timezone = 'UM8';
-		$daylight_saving = FALSE;
- 
-		$now = gmt_to_local($timestamp, $timezone, $daylight_saving);
-		$datestring = "%Y-%m-%d %h:%i:%s";
- 
-		$this->now = mdate($datestring, $now);
-
-		
-		/*
-		 * Mandamos todo lo que llegue a la funcion
-		 * administracion().
-		 **/
-		//redirect('tutelas/administracion');
 	}
-
 
 	function index() 
 	{
@@ -45,9 +24,8 @@ class Tutelas extends CI_Controller
 		 * Mandamos todo lo que llegue a la funcion
 		 * administracion().
 		 **/
-	redirect('tutelas/administracion');
+		redirect('tutelas/administracion');
 	}
-
 
 	/*
 	 * 
@@ -68,59 +46,50 @@ class Tutelas extends CI_Controller
 			$crud->set_table('tutela');
 
 			/* Le asignamos un nombre */
-			$crud->set_subject('tutela');
+			$crud->set_subject('Tutela');
 
 			/* Asignamos el idioma español */
 			$crud->set_language('spanish');
 
-			/* Añadimos una funcionalidad extra a las columnas */
-			$crud ->callback_column('estado',array($this,'_GC_Estatus'));
-
-
+			
+			$crud->field_type('Responsable','dropdown',array('Angelica','Ana'));
+			
 			/* Aqui le decimos a grocery que estos campos son obligatorios */
 			$crud->required_fields(
 				 
 				'Radicado_Interno',
 				'Radicado_UQ',
-				'Asunto', 
-				'Solicitante', 
+				'Asunto',
 				'Responsable', 
-				'Correo_Responsable', 
+				'Solicitante', 
+				'Correo_Responsable',
 				'Fecha_Recibido',
 				'Fecha_Vencimiento',
-				'Usuario_Cedula'
+				'Usuario_cedula'
+
 
 			);
 
-			/* Aqui le indicamos que campos deseamos mostrar 
-
-				
-
-
-			*/
+			/* Aqui le indicamos que campos deseamos mostrar */
 			$crud->columns(
 				'Radicado_Interno',
-			
-				'Responsable', 
-			
+				'Asunto',
+				'Solicitante',
+				'Responsable',
+				'Correo_Responsable', 
 				'Fecha_Recibido',
-				'Fecha_Vencimiento',
-				'estado'
-		
-
+				'Fecha_Vencimiento'
 			
 			);
 			
-			/* Generamos la tabla 
-				
-			*/
+			/* Generamos la tabla */
 			$output = $crud->render();
-		
+			
 			/* La cargamos en la vista situada en 
 			/applications/views/productos/administracion.php */
 			$this->load->view('tutelas/administracion', $output);
 			
-	        
+	
 			
 			
 		}catch(Exception $e){
@@ -129,29 +98,6 @@ class Tutelas extends CI_Controller
 		}
 			
 	}
-
-			public function _GC_Estatus($value, $row)
-	 {
 	
- 
-		/* Si la fecha actual es mayor o igual a la del inicio de la promocion y es menor
-		 * a la de la fecha de vencimiento, la promocion esta activa.
-		 */
-		if($this->now >= $row->Fecha_Recibido AND $this->now < $row->Fecha_Vencimiento) 
-		{
-
-		return '<span class="alert alert-success">Activa</span>';
-
-		}
-		else {
-		
-			echo 'Fecha_Recibido';
-			return '<span class="alert alert-danger">Critico</span>';
-		}
-	}
-
+	
 }
-
-
-		
-	

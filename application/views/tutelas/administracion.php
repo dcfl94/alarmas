@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Reportes</title>
+	<title>Tutelas</title>
 <?php 
 foreach($css_files as $file): ?>
 	<link type="text/css" rel="stylesheet" href="<?php echo $file; ?>" />
@@ -28,10 +28,13 @@ a:hover
 </style>
 </head>
 <body>
-	<h1>Administracion de Tutelas</h1>
+	<h1>Administración de Tutelas</h1>
     <div>
 	
 		<?php echo $output; ?>
     </div>
+
+    <br>
+     
 </body>
 </html>

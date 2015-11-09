@@ -7,6 +7,7 @@ class Articulo_model extends CI_Model {
         $this->load->database();
     }
    
+   
    function dame_ultimos_articulos(){
      
 	    $query = $this->db->query("SELECT Fecha_Vencimiento,Solicitante,Fecha_Recibido,Responsable,Radicado_Interno,Asunto FROM tutela");
@@ -15,13 +16,14 @@ class Articulo_model extends CI_Model {
 		 $tamaño=count($result);
 		 
 		 
+		 
 		  $hoy= date('Y-m-d',strtotime('-1 day')) ;
 
                 $hoy = strtotime($hoy);
 		 
 		if($tamaño>0)
 	      {
-			 
+			// echo $tamaño;
 			// echo "hay datos"; 
 			 foreach ($result as $row)
 					{
@@ -77,5 +79,25 @@ class Articulo_model extends CI_Model {
 
   
    }
+   
+   
+   
+   
+    function tamañoTutela(){
+		
+	     $query = $this->db->query("SELECT Fecha_Vencimiento,Solicitante,Fecha_Recibido,Responsable,Radicado_Interno,Asunto FROM tutela");
+        $result= $query->result();
+        ;
+		 $tamaño=count($result);
+		
+		return $tamaño;
+		
+		
+	}
+   
+   
+   
+   
+   
 }
 ?>

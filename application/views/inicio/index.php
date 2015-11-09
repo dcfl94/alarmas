@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Administracion Tutelas - Sourcezilla</title>
+	<title>SisTraAlarmas</title>
 	<style type='text/css'>
 		body
 		{
@@ -62,12 +62,16 @@
 			    <span class="caret"></span>
 			  </button>
 			  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-			    <li><a href="index.php/tutelas/administracion">Tutelas</a>
+			    <li>				<a href="index.php/tutelas/administracion">TUTELAS</a>
 			    </li>
-			    <li>	    		<a href="index.php/derechopeticion/administracion">Derechos de peticion</a>
+			    <li>	    		<a href="index.php/derechopeticion/administracion">DERECHOS DE PETICIÓN</a>
 			    </li>
-			    <li>	    		<a href="index.php/reportes">Reportes</a>
+			    <li>	    		<a href="index.php/reportes">REPORTES TUTELAS</a>
 			    </li>
+			     <li>	    		<a href="index.php/reportesP">REPORTES PETICIÒN</a>
+			    </li>
+				 <li>	    		<a href="index.php/graficos">ESTADISTICAS</a>
+				  </li>
 			  </ul>
 			</div>
 	    </div>

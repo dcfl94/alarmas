@@ -1,16 +1,16 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 /* Heredamos de la clase CI_Controller */
-class reportes extends CI_Controller 
+class reportesP extends CI_Controller 
 
 {
 
 	  function index(){
     
 	 $this->load->helper('url');
-	       $this->load->model('Articulo_model');
+	       $this->load->model('Reportes_model');
 	   
-	    $ultimosArticulos = $this->Articulo_model->dame_ultimos_articulos();
+	    $ultimosArticulos = $this->Reportes_model->dame_ultimos_articulos();
       
       //creo el array con datos de configuración para la vista
       $datos_vista = array('rs_articulos' => $ultimosArticulos);
@@ -35,7 +35,7 @@ class reportes extends CI_Controller
 	    
 		 
 		 
-		   $this->load->view('reportes/administracion' ,$json);
+		   $this->load->view('reportesP/administracion' ,$json);
 	  
 	 
   
@@ -46,8 +46,8 @@ class reportes extends CI_Controller
 	 
 	   
 	 $this->load->helper('url');
-	 $this->load->model('Articulo_model');
-	 $ultimosArticulos = $this->Articulo_model->dame_ultimos_articulos();
+	 $this->load->model('Reportes_model');
+	 $ultimosArticulos = $this->Reportes_model->dame_ultimos_articulos();
       
       //creo el array con datos de configuración para la vista
      $datos_vista = array('rs_articulos' => $ultimosArticulos);

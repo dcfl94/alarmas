@@ -3,6 +3,7 @@
 /* Heredamos de la clase CI_Controller */
 class DerechoPeticion extends CI_Controller {
 
+
 	function __construct() 
 	{
 		
@@ -44,7 +45,7 @@ class DerechoPeticion extends CI_Controller {
 			$crud->set_table('derechopeticion');
 
 			/* Le asignamos un nombre */
-			$crud->set_subject('derecho Peticion');
+			$crud->set_subject('Derecho Petición');
 
 			/* Asignamos el idioma español */
 			$crud->set_language('spanish');
@@ -52,32 +53,30 @@ class DerechoPeticion extends CI_Controller {
 			/* Aqui le decimos a grocery que estos campos son obligatorios */
 			$crud->required_fields(
 				 
-				'RadicadoInterno',
-				'RadicadoUQ',
-				'Asunto', 
+				'Radicado_Interno',
+				'Radicado_UQ',
+				'Asunto',
+				'Tipo_Derecho_Peticion',
+				'Responsable', 
 				'Solicitante', 
-				'FechaRecibido',
-				'FechaVencimiento',
-				'Usuario_idUsuario',
-				'Responsable_idResponsable',
-				'Estado_idEstado',
-				'TipoDerechoP_idTipo'
+				'Correo_Responsable',
+				'Fecha_Recibido',
+				'Fecha_Vencimiento',
+				'Usuario_cedula'
 
 
 			);
 
 			/* Aqui le indicamos que campos deseamos mostrar */
 			$crud->columns(
-				'RadicadoInterno',
-				'RadicadoUQ',
-				'Asunto', 
+				'Radicado_Interno',
+				'Asunto',
+				'Tipo_Derecho_Peticion',
+				'Responsable',
+				'Correo_Responsable', 
 				'Solicitante', 
-				'FechaRecibido',
-				'FechaVencimiento',
-				'Usuario_idUsuario',
-				'Responsable_idResponsable',
-				'Estado_idEstado',
-				'TipoDerechoP_idTipo'
+				'Fecha_Recibido',
+				'Fecha_Vencimiento'
 
 
 			);
