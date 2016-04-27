@@ -1,6 +1,6 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-/* Heredamos de la clase CI_Controller */
+/* ensayo he echo un comit  */
 class Tutelas extends CI_Controller {
 
 	function __construct() 
